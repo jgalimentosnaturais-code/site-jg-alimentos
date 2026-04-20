@@ -20,7 +20,7 @@ export default function Footer() {
           className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10"
         >
           <motion.div variants={fadeUp} className="col-span-1 md:col-span-1">
-            <img src="/logo.png" alt="JG Alimentos" className="h-14 w-auto mb-3" />
+            <img src="/logo.png" alt="JG Alimentos" className="h-20 w-auto mb-3" />
             <p className="text-sm text-inverse-on-surface/60 leading-relaxed max-w-xs">
               Distribuidor atacadista de alimentos naturais com mais de 6 anos de experiência no mercado brasileiro.
             </p>
