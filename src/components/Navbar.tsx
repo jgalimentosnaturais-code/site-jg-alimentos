@@ -51,14 +51,14 @@ export default function Navbar() {
       } bg-surface/80 backdrop-blur-md`}
       style={{ overflow: 'hidden' }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center relative">
+      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center relative">
         <motion.div
           className="cursor-pointer flex-shrink-0"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <Logo size={56} />
+          <Logo size={80} />
         </motion.div>
 
         <motion.ul
