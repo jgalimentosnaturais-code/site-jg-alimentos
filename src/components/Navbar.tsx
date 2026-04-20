@@ -95,7 +95,7 @@ export default function Navbar() {
         </motion.ul>
 
         <motion.a
-          href="https://wa.me/5500000000000"
+          href="https://wa.me/5544988266741"
           target="_blank"
           rel="noopener noreferrer"
           variants={itemVariants}

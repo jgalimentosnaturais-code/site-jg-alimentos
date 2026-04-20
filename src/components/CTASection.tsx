@@ -41,7 +41,7 @@ export default function CTASection() {
 
           <motion.div variants={fadeUp} className="relative flex flex-wrap items-center justify-center gap-4">
             <motion.a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5544988266741"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -3 }}
@@ -53,7 +53,7 @@ export default function CTASection() {
             </motion.a>
             <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
               <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>phone</span>
-              (00) 00000-0000
+              (44) 98826-6741
             </div>
           </motion.div>
         </motion.div>
