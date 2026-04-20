@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, type Variants } from 'framer-motion'
+import Logo from './Logo'
 
 const links = [
   { label: 'Início', to: '/' },
@@ -57,7 +58,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.97 }}
           onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <img src="/logo.png" alt="JG Alimentos" className="h-28 w-auto" />
+          <Logo />
         </motion.div>
 
         <motion.ul
