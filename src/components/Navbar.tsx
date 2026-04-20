@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, type Variants } from 'framer-motion'
 
 const links = [
@@ -26,6 +26,7 @@ const itemVariants: Variants = {
 
 export default function Navbar() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [active, setActive] = useState(() => getActiveFromPath(location.pathname))
   const [scrolled, setScrolled] = useState(false)
 
@@ -50,15 +51,14 @@ export default function Navbar() {
       style={{ overflow: 'hidden' }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" onClick={() => { setActive('Início'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
-          <motion.span
-            className="text-xl font-bold text-primary tracking-tight"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            JG <span className="text-on-surface">Alimentos</span>
-          </motion.span>
-        </Link>
+        <motion.span
+          className="text-xl font-bold text-primary tracking-tight cursor-pointer"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+        >
+          JG <span className="text-on-surface">Alimentos</span>
+        </motion.span>
 
         <motion.ul
           variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } } }}
@@ -73,7 +73,7 @@ export default function Navbar() {
                 key={link.label}
                 variants={itemVariants}
                 className="relative px-4 py-2 cursor-pointer"
-                onClick={() => { setActive(link.label); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+                onClick={() => { setActive(link.label); navigate(link.to); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
               >
                 {isActive && (
                   <motion.span
@@ -82,14 +82,13 @@ export default function Navbar() {
                     transition={{ type: 'spring', stiffness: 380, damping: 34 }}
                   />
                 )}
-                <Link
-                  to={link.to}
-                  className={`relative text-sm font-medium transition-colors duration-200 no-underline ${
-                    isActive ? 'text-primary' : 'text-on-surface/70 hover:text-on-surface'
+                <span
+                  className={`relative text-sm font-medium transition-colors duration-200 pointer-events-none ${
+                    isActive ? 'text-primary' : 'text-on-surface/70'
                   }`}
                 >
                   {link.label}
-                </Link>
+                </span>
               </motion.li>
             )
           })}
