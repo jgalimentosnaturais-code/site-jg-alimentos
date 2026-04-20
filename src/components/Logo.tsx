@@ -1,10 +1,27 @@
-export default function Logo({ className = 'h-28 w-auto' }: { className?: string }) {
+export default function Logo({ size = 56 }: { size?: number }) {
   return (
-    <img
-      src="/logo.png"
-      alt="JG Alimentos"
-      className={className}
-      style={{ display: 'block', margin: 0, padding: 0 }}
-    />
+    <div
+      style={{
+        width: size,
+        height: size,
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+      }}
+    >
+      <img
+        src="/logo.png"
+        alt="JG Alimentos"
+        style={{
+          height: size * 1.62,
+          width: 'auto',
+          display: 'block',
+          margin: 0,
+          padding: 0,
+        }}
+      />
+    </div>
   )
 }
