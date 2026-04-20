@@ -28,7 +28,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mt-6">
               <motion.a
-                href="https://instagram.com"
+                href="https://www.instagram.com/jg_alimentos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -2 }}
