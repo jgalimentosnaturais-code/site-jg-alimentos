@@ -11,7 +11,7 @@ export default function CTASection() {
           whileInView="visible"
           viewport={viewport}
           className="relative rounded-3xl overflow-hidden p-12 lg:p-16 text-center"
-          style={{ background: 'linear-gradient(135deg, #854f1a 0%, #a26730 60%, #b87d45 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #3A6B50 0%, #4F74AD 60%, #7A9FD4 100%)' }}
         >
           <div className="absolute -top-20 -left-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />

@@ -33,7 +33,7 @@ export default function AboutSection() {
           <motion.div
             variants={scaleIn}
             className="rounded-2xl p-8 flex flex-col justify-between min-h-[220px]"
-            style={{ background: 'linear-gradient(135deg, #854f1a, #a26730)' }}
+            style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
           >
             <span className="material-symbols-outlined text-white/60" style={{ fontSize: '40px' }}>eco</span>
             <div>

@@ -5,16 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#854f1a',
-        'primary-container': '#a26730',
-        secondary: '#52652a',
-        'secondary-container': '#d4eca2',
-        surface: '#faf9f9',
-        'on-surface': '#1a1c1c',
-        'surface-container-low': '#f4f3f3',
-        outline: '#847468',
-        'inverse-surface': '#2e3131',
-        'inverse-on-surface': '#f0f1f1',
+        primary: '#4F74AD',
+        'primary-container': '#7A9FD4',
+        secondary: '#3A6B50',
+        'secondary-container': '#B8D9C6',
+        surface: '#F5F8FC',
+        'on-surface': '#1A2333',
+        'surface-container-low': '#EBF0F8',
+        outline: '#7A8FA8',
+        'inverse-surface': '#1A2840',
+        'inverse-on-surface': '#E2EAF5',
       },
       borderRadius: {
         DEFAULT: '0.125rem',

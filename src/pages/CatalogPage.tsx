@@ -89,7 +89,7 @@ export default function CatalogPage() {
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                     className="mt-6 flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold text-white no-underline"
-                    style={{ background: 'linear-gradient(135deg, #854f1a, #a26730)' }}
+                    style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
                   >
                     <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>chat</span>
                     Solicitar catálogo

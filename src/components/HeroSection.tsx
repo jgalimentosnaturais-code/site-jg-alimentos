@@ -16,7 +16,7 @@ function PulseButton({ href, children }: { href: string; children: React.ReactNo
         whileHover={{ scale: 1.05, y: -3 }}
         whileTap={{ scale: 0.97 }}
         className="relative flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white no-underline"
-        style={{ background: 'linear-gradient(135deg, #854f1a, #a26730)' }}
+        style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
       >
         {children}
       </motion.a>

@@ -104,7 +104,7 @@ export default function Navbar() {
           whileHover={{ scale: 1.05, y: -1 }}
           whileTap={{ scale: 0.97 }}
           className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white no-underline"
-          style={{ background: 'linear-gradient(135deg, #854f1a, #a26730)' }}
+          style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
         >
           <span className="material-symbols-outlined text-base" style={{ fontSize: '18px' }}>chat</span>
           Fale conosco
