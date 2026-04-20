@@ -51,14 +51,14 @@ export default function Navbar() {
       style={{ overflow: 'hidden' }}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <motion.span
-          className="text-xl font-bold text-primary tracking-tight cursor-pointer"
+        <motion.div
+          className="cursor-pointer"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          JG <span className="text-on-surface">Alimentos</span>
-        </motion.span>
+          <img src="/logo.png" alt="JG Alimentos" className="h-10 w-auto" />
+        </motion.div>
 
         <motion.ul
           variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } } }}
