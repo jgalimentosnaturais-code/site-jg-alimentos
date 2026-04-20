@@ -57,7 +57,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.97 }}
           onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <img src="/logo.png" alt="JG Alimentos" className="h-14 w-auto" />
+          <img src="/logo.png" alt="JG Alimentos" className="h-20 w-auto" />
         </motion.div>
 
         <motion.ul
