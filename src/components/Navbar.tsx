@@ -50,14 +50,14 @@ export default function Navbar() {
       } bg-surface/80 backdrop-blur-md`}
       style={{ overflow: 'hidden' }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center relative">
+      <div className="max-w-6xl mx-auto px-6 h-32 flex items-center relative">
         <motion.div
           className="cursor-pointer flex-shrink-0"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <img src="/logo.png" alt="JG Alimentos" className="h-20 w-auto" />
+          <img src="/logo.png" alt="JG Alimentos" className="h-28 w-auto" />
         </motion.div>
 
         <motion.ul
