@@ -1,5 +1,4 @@
 // Image: 1920x1080, circle: 313x312px centered at (962, 543)
-// Scale factor to fill container with exactly the circle: 1080/312 ≈ 3.46
 const SCALE = 1080 / 312
 
 export default function Logo({ size = 56 }: { size?: number }) {
@@ -9,9 +8,7 @@ export default function Logo({ size = 56 }: { size?: number }) {
         width: size,
         height: size,
         overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        position: 'relative',
         flexShrink: 0,
       }}
     >
@@ -21,8 +18,10 @@ export default function Logo({ size = 56 }: { size?: number }) {
         style={{
           height: size * SCALE,
           width: 'auto',
-          display: 'block',
-          flexShrink: 0,
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
         }}
       />
     </div>
