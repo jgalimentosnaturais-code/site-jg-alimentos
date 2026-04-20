@@ -1,3 +1,7 @@
+// Image: 1920x1080, circle: 313x312px centered at (962, 543)
+// Scale factor to fill container with exactly the circle: 1080/312 ≈ 3.46
+const SCALE = 1080 / 312
+
 export default function Logo({ size = 56 }: { size?: number }) {
   return (
     <div
@@ -15,11 +19,10 @@ export default function Logo({ size = 56 }: { size?: number }) {
         src="/logo.png"
         alt="JG Alimentos"
         style={{
-          height: size * 1.62,
+          height: size * SCALE,
           width: 'auto',
           display: 'block',
-          margin: 0,
-          padding: 0,
+          flexShrink: 0,
         }}
       />
     </div>
