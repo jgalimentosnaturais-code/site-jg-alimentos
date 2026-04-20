@@ -17,7 +17,7 @@ export default function SobrePage() {
       animate="visible"
       exit="exit"
     >
-      <section className="pt-32 pb-20 bg-surface">
+      <section className="pt-64 pb-20 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div

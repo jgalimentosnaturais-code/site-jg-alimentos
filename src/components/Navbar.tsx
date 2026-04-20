@@ -50,21 +50,22 @@ export default function Navbar() {
       } bg-surface/80 backdrop-blur-md`}
       style={{ overflow: 'hidden' }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-2 flex flex-col items-center gap-2">
         <motion.div
           className="cursor-pointer"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
           onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
         >
-          <img src="/logo.png" alt="JG Alimentos" className="h-36 w-auto" />
+          <img src="/logo.png" alt="JG Alimentos" className="h-44 w-auto" />
         </motion.div>
 
+        <div className="flex items-center justify-between w-full">
         <motion.ul
           variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } } }}
           initial="hidden"
           animate="visible"
-          className="hidden md:flex items-center gap-1 list-none m-0 p-0"
+          className="hidden md:flex items-center gap-1 list-none m-0 p-0 mx-auto"
         >
           {links.map((link) => {
             const isActive = active === link.label
@@ -109,6 +110,7 @@ export default function Navbar() {
           <span className="material-symbols-outlined text-base" style={{ fontSize: '18px' }}>chat</span>
           Fale conosco
         </motion.a>
+        </div>
       </div>
     </motion.nav>
   )

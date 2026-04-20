@@ -26,7 +26,7 @@ function PulseButton({ href, children }: { href: string; children: React.ReactNo
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen pt-24 pb-16 bg-surface flex items-center">
+    <section className="min-h-screen pt-52 pb-16 bg-surface flex items-center">
       <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
         <motion.div
           variants={stagger}

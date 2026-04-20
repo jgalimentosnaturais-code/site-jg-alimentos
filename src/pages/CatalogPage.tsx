@@ -28,7 +28,7 @@ export default function CatalogPage() {
       animate="visible"
       exit="exit"
     >
-      <section className="pt-32 pb-16 bg-surface">
+      <section className="pt-64 pb-16 bg-surface">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={stagger}
