@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-inverse-on-surface/40">
           <p>© {new Date().getFullYear()} JG Alimentos. Todos os direitos reservados.</p>
-          <p>CNPJ: 00.000.000/0001-00 — Brasil</p>
+          <p>CNPJ: 47.217.599/0001-83 — Brasil</p>
         </div>
       </div>
     </footer>
