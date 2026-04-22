@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { motion, type Variants } from 'framer-motion'
+import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import Logo from './Logo'
 
 const links = [
@@ -30,16 +30,27 @@ export default function Navbar() {
   const navigate = useNavigate()
   const [active, setActive] = useState(() => getActiveFromPath(location.pathname))
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     setActive(getActiveFromPath(location.pathname))
   }, [location.pathname])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+      if (window.scrollY > 80) setMenuOpen(false)
+    }
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const handleNav = (label: string, to: string) => {
+    setActive(label)
+    setMenuOpen(false)
+    navigate(to)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <motion.nav
@@ -49,18 +60,20 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${
         scrolled ? 'shadow-md' : ''
       } bg-surface/80 backdrop-blur-md`}
-      style={{ overflow: 'hidden' }}
     >
-      <div className="max-w-6xl mx-auto px-6 h-24 flex items-center relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 md:h-20 lg:h-24 flex items-center relative">
+        {/* Logo */}
         <motion.div
           className="cursor-pointer flex-shrink-0"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          onClick={() => { setActive('Início'); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+          onClick={() => handleNav('Início', '/')}
         >
-          <Logo size={80} />
+          <span className="md:hidden"><Logo size={56} /></span>
+          <span className="hidden md:block"><Logo size={80} /></span>
         </motion.div>
 
+        {/* Desktop nav links */}
         <motion.ul
           variants={{ visible: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } } }}
           initial="hidden"
@@ -74,7 +87,7 @@ export default function Navbar() {
                 key={link.label}
                 variants={itemVariants}
                 className="relative px-4 py-2 cursor-pointer"
-                onClick={() => { setActive(link.label); navigate(link.to); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+                onClick={() => handleNav(link.label, link.to)}
               >
                 {isActive && (
                   <motion.span
@@ -95,6 +108,7 @@ export default function Navbar() {
           })}
         </motion.ul>
 
+        {/* Desktop CTA */}
         <motion.a
           href="https://wa.me/5544988266741"
           target="_blank"
@@ -107,10 +121,75 @@ export default function Navbar() {
           className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white no-underline ml-auto"
           style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
         >
-          <span className="material-symbols-outlined text-base" style={{ fontSize: '18px' }}>chat</span>
+          <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>chat</span>
           Fale conosco
         </motion.a>
+
+        {/* Mobile: ícone WhatsApp + botão hamburger */}
+        <div className="flex items-center gap-2 ml-auto md:hidden">
+          <motion.a
+            href="https://wa.me/5544988266741"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileTap={{ scale: 0.95 }}
+            className="flex items-center justify-center w-10 h-10 rounded-full text-white"
+            style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
+            aria-label="Fale conosco no WhatsApp"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>chat</span>
+          </motion.a>
+
+          <button
+            onClick={() => setMenuOpen((o) => !o)}
+            className="flex items-center justify-center w-10 h-10 rounded-xl text-on-surface/70"
+            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          >
+            <motion.span
+              key={menuOpen ? 'close' : 'menu'}
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              transition={{ duration: 0.18 }}
+              className="material-symbols-outlined"
+              style={{ fontSize: '24px' }}
+            >
+              {menuOpen ? 'close' : 'menu'}
+            </motion.span>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile dropdown */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden overflow-hidden bg-surface/95 backdrop-blur-md border-t border-outline/10"
+          >
+            <ul className="list-none m-0 p-0 px-4 py-3 flex flex-col gap-1">
+              {links.map((link) => {
+                const isActive = active === link.label
+                return (
+                  <li key={link.label}>
+                    <button
+                      onClick={() => handleNav(link.label, link.to)}
+                      className={`w-full text-left px-4 py-3.5 rounded-xl text-sm font-medium transition-colors ${
+                        isActive
+                          ? 'bg-primary/10 text-primary'
+                          : 'text-on-surface/70 hover:bg-surface-container'
+                      }`}
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                )
+              })}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   )
 }

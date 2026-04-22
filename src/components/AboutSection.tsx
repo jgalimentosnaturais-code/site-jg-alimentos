@@ -21,8 +21,8 @@ const cards = [
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-surface-container-low" id="sobre-section">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-12 md:py-20 bg-surface-container-low" id="sobre-section">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -32,12 +32,12 @@ export default function AboutSection() {
         >
           <motion.div
             variants={scaleIn}
-            className="rounded-2xl p-8 flex flex-col justify-between min-h-[220px]"
+            className="rounded-2xl p-5 md:p-8 flex flex-col justify-between min-h-[180px] md:min-h-[220px]"
             style={{ background: 'linear-gradient(135deg, #4F74AD, #7A9FD4)' }}
           >
             <span className="material-symbols-outlined text-white/60" style={{ fontSize: '40px' }}>eco</span>
             <div>
-              <p className="text-5xl font-extrabold text-white leading-none">6+</p>
+              <p className="text-4xl md:text-5xl font-extrabold text-white leading-none">6+</p>
               <p className="text-sm font-semibold text-white/80 mt-1">Anos de Mercado</p>
             </div>
           </motion.div>
@@ -46,7 +46,7 @@ export default function AboutSection() {
             <motion.div
               key={card.title}
               variants={fadeUp}
-              className="group rounded-2xl p-8 bg-white hover:bg-primary transition-colors duration-300 cursor-default shadow-sm"
+              className="group rounded-2xl p-5 md:p-8 bg-white hover:bg-primary transition-colors duration-300 cursor-default shadow-sm"
             >
               <span
                 className="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-300"

@@ -26,8 +26,8 @@ function PulseButton({ href, children }: { href: string; children: React.ReactNo
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen pt-28 pb-16 bg-surface flex items-center">
-      <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen pt-20 md:pt-24 lg:pt-28 pb-10 md:pb-16 bg-surface flex items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <motion.div
           variants={stagger}
           initial="hidden"
@@ -45,7 +45,7 @@ export default function HeroSection() {
 
           <motion.h1
             variants={fadeUp}
-            className="text-4xl lg:text-6xl font-extrabold text-on-surface leading-tight tracking-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-on-surface leading-tight tracking-tight"
           >
             Alimentos naturais{' '}
             <em className="italic text-primary not-italic" style={{ fontStyle: 'italic' }}>
@@ -74,7 +74,7 @@ export default function HeroSection() {
             </motion.a>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="flex items-center gap-6 pt-2">
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
             {[['6+', 'Anos de mercado'], ['500+', 'Clientes ativos'], ['100%', 'Natural']].map(([num, label]) => (
               <div key={label}>
                 <p className="text-2xl font-extrabold text-primary">{num}</p>

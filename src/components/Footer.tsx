@@ -11,16 +11,16 @@ const nav = [
 export default function Footer() {
   return (
     <footer className="bg-inverse-surface text-inverse-on-surface">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 md:py-16">
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pb-8 md:pb-12 border-b border-white/10"
         >
           <motion.div variants={fadeUp} className="col-span-1 md:col-span-1">
-            <img src="/logo.svg" alt="JG Alimentos" className="h-20 w-auto mb-3" />
+            <img src="/logo.svg" alt="JG Alimentos" className="h-14 md:h-20 w-auto mb-3" />
             <p className="text-sm text-inverse-on-surface/60 leading-relaxed max-w-xs">
               Distribuidor atacadista de alimentos naturais com mais de 6 anos de experiência no mercado brasileiro.
             </p>

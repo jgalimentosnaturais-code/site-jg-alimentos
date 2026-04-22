@@ -17,9 +17,9 @@ export default function SobrePage() {
       animate="visible"
       exit="exit"
     >
-      <section className="pt-64 pb-20 bg-surface">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="pt-24 md:pt-40 lg:pt-56 pb-10 md:pb-20 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               variants={stagger}
               initial="hidden"
@@ -59,7 +59,7 @@ export default function SobrePage() {
                 <img
                   src="/images/sobre.jpg"
                   alt="JG Alimentos"
-                  className="w-full h-[420px] object-cover object-[center_62%]"
+                  className="w-full h-[260px] sm:h-[340px] md:h-[380px] lg:h-[420px] object-cover object-[center_62%]"
                   loading="lazy"
                   decoding="async"
                 />
@@ -77,8 +77,8 @@ export default function SobrePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-surface-container-low">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 md:py-20 bg-surface-container-low">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -98,7 +98,7 @@ export default function SobrePage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={viewport}
-                className="group bg-white rounded-2xl p-7 hover:bg-primary transition-colors duration-300 shadow-sm"
+                className="group bg-white rounded-2xl p-5 md:p-7 hover:bg-primary transition-colors duration-300 shadow-sm"
               >
                 <span
                   className="material-symbols-outlined text-primary group-hover:text-white transition-colors duration-300"

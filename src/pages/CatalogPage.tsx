@@ -28,14 +28,14 @@ export default function CatalogPage() {
       animate="visible"
       exit="exit"
     >
-      <section className="pt-64 pb-16 bg-surface">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="pt-24 md:pt-40 lg:pt-56 pb-10 md:pb-16 bg-surface">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
-            className="text-center mb-16"
+            className="text-center mb-10 md:mb-16"
           >
             <motion.span
               variants={fadeUp}
@@ -52,7 +52,7 @@ export default function CatalogPage() {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {categories.map((cat) => (
               <motion.div
                 key={cat.name}
@@ -62,7 +62,7 @@ export default function CatalogPage() {
                 viewport={viewport}
                 className="rounded-2xl overflow-hidden bg-white shadow-sm border border-outline/10"
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-44 md:h-52 overflow-hidden">
                   <img
                     src={cat.image}
                     alt={cat.name}
