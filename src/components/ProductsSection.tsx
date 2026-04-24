@@ -8,8 +8,12 @@ const products = [
     description: 'Castanhas, nozes, amêndoas e muito mais',
     images: [
       '/images/oleaginosas.jpg',
+      '/images/oleaginosas-1.jpg',
       '/images/oleaginosas-2.jpg',
       '/images/oleaginosas-3.jpg',
+      '/images/oleaginosas-4.jpg',
+      '/images/oleaginosas-5.jpg',
+      '/images/oleaginosas-6.jpg',
     ],
   },
   {
@@ -28,6 +32,24 @@ const products = [
       '/images/temperos.jpg',
       '/images/temperos-2.jpg',
       '/images/temperos-3.jpg',
+    ],
+  },
+  {
+    name: 'Sementes',
+    description: 'Chia, linhaça, abóbora, girassol e outras',
+    images: [
+      '/images/sementes.jpg',
+    ],
+  },
+  {
+    name: 'Variedades',
+    description: 'Mix, granola, sementes e muito mais',
+    images: [
+      '/images/variedades-1.jpg',
+      '/images/variedades-2.jpg',
+      '/images/variedades-3.jpg',
+      '/images/variedades-4.jpg',
+      '/images/variedades-5.jpg',
     ],
   },
 ]
@@ -155,7 +177,7 @@ export default function ProductsSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {products.map((product) => (
             <ProductCard key={product.name} product={product} />
           ))}

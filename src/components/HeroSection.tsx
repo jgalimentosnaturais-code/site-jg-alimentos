@@ -95,8 +95,8 @@ export default function HeroSection() {
           <div className="absolute -inset-8 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
           <div className="overflow-hidden rounded-2xl shadow-2xl">
             <img
-              src="/images/hero.jpg"
-              alt="Produtos JG Alimentos"
+              src="/images/fachada.jpg"
+              alt="Fachada JG Alimentos"
               className="w-full h-[520px] object-cover"
               fetchPriority="high"
             />

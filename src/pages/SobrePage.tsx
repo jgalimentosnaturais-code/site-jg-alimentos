@@ -65,7 +65,7 @@ export default function SobrePage() {
                 />
               </div>
               <div className="grid grid-cols-3 gap-4 mt-4">
-                {[['6+', 'Anos'], ['500+', 'Clientes'], ['3', 'Categorias']].map(([num, label]) => (
+                {[['6+', 'Anos'], ['500+', 'Clientes'], ['+300', 'Produtos']].map(([num, label]) => (
                   <div key={label} className="bg-surface-container-low rounded-xl p-4 text-center">
                     <p className="text-2xl font-extrabold text-primary">{num}</p>
                     <p className="text-xs text-on-surface/50 font-medium mt-0.5">{label}</p>
