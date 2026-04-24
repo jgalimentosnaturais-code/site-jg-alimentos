@@ -5,8 +5,7 @@ import CTASection from '../components/CTASection'
 const values = [
   { icon: 'verified', title: 'Qualidade', text: 'Selecionamos rigorosamente cada produto para garantir a melhor qualidade aos nossos clientes.' },
   { icon: 'handshake', title: 'Confiança', text: 'Construímos relacionamentos duradouros baseados em transparência e comprometimento.' },
-  { icon: 'eco', title: 'Naturalidade', text: 'Trabalhamos exclusivamente com alimentos naturais, sem aditivos químicos ou artificiais.' },
-  { icon: 'groups', title: 'Parceria', text: 'Tratamos cada cliente como um parceiro estratégico, oferecendo suporte e condições especiais.' },
+{ icon: 'groups', title: 'Parceria', text: 'Tratamos cada cliente como um parceiro estratégico, oferecendo suporte e condições especiais.' },
 ]
 
 export default function SobrePage() {
@@ -90,7 +89,7 @@ export default function SobrePage() {
               Nossos valores
             </motion.h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {values.map((v) => (
               <motion.div
                 key={v.title}
