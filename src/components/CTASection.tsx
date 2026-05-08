@@ -44,6 +44,7 @@ export default function CTASection() {
               href="https://wa.me/5544988266741?text=Ol%C3%A1!%20Sou%20lojista%20e%20tenho%20interesse%20em%20saber%20mais%20sobre%20seu%20cat%C3%A1logo!"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => (window as any).gtag_report_conversion?.()}
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.97 }}
               className="flex items-center gap-2 px-6 py-3.5 md:px-8 md:py-4 rounded-xl bg-white text-primary font-bold text-sm no-underline shadow-lg"

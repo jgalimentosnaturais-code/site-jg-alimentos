@@ -13,6 +13,7 @@ function PulseButton({ href, children }: { href: string; children: React.ReactNo
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => (window as any).gtag_report_conversion?.()}
         whileHover={{ scale: 1.05, y: -3 }}
         whileTap={{ scale: 0.97 }}
         className="relative flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white no-underline"
