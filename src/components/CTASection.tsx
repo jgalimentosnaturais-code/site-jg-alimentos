@@ -41,7 +41,7 @@ export default function CTASection() {
 
           <motion.div variants={fadeUp} className="relative flex flex-wrap items-center justify-center gap-4">
             <motion.a
-              href="https://wa.me/5544988266741"
+              href="https://wa.me/5544988266741?text=Ol%C3%A1!%20Sou%20lojista%20e%20tenho%20interesse%20em%20saber%20mais%20sobre%20seu%20cat%C3%A1logo!"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -3 }}

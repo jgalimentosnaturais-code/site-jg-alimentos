@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import LandingPage from './pages/LandingPage'
 import CatalogPage from './pages/CatalogPage'
 import SobrePage from './pages/SobrePage'
@@ -25,6 +26,7 @@ export default function App() {
       <Navbar />
       <AnimatedRoutes />
       <Footer />
+      <WhatsAppButton />
     </BrowserRouter>
   )
 }
